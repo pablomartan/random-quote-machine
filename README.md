@@ -9,4 +9,6 @@ The libraries covered in the course were [Bootstrap](https://getbootstrap.com/),
 [Redux](https://redux.js.org/).
 
 # License
+Copyright © 2023 Pablo Martínez
+
 [GPLv3.0](./LICENSE)
