@@ -37,6 +37,7 @@ class SocialLink extends React.Component {
   render() {
     return(
       <a id={this.props.id} title={this.props.title}>
+        <i className="fas fa-twitter"></i>
       </a>
     )
   }
