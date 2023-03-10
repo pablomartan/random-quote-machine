@@ -23,6 +23,7 @@ class NewQuote extends React.Component {
   render() {
     return(
       <button id="new-quote">
+        New quote!
       </button>
     )
   }
