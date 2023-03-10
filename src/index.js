@@ -31,7 +31,6 @@ const reducer = (state = defaultState, action) => {
 };
 
 const store = createStore(reducer);
-console.log(store.getState());
 
 const mapStateToProps = state => {
   return {

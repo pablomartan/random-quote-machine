@@ -77,7 +77,6 @@ export default class QuoteBox extends React.Component {
   }
   
   render() {
-    console.log(this);
     return(
       <div id="quote-box">
         <Text text={this.props.text} />
