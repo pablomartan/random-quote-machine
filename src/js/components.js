@@ -9,7 +9,7 @@ class Buttons extends React.Component {
     return(
       <div id="buttons">
         <SocialLink id="tweeter-quote" title="Tweet this quote!"/>
-        <NewQuote />
+        <NewQuote generate={this.props.generate}/>
       </div>
     )
   }
@@ -22,7 +22,7 @@ class NewQuote extends React.Component {
 
   render() {
     return(
-      <button id="new-quote">
+      <button id="new-quote" onClick={this.props.generate}>
         New quote!
       </button>
     )
@@ -51,6 +51,7 @@ class Author extends React.Component {
   render() {
     return(
       <div id="author">
+        {this.props.author}
       </div>
     );
   }
@@ -64,6 +65,7 @@ class Text extends React.Component {
   render() {
     return(
       <div id="text">
+        {this.props.text}
       </div>
     );
   }
@@ -73,13 +75,14 @@ export default class QuoteBox extends React.Component {
   constructor(props) {
     super(props); 
   }
-
+  
   render() {
+    console.log(this);
     return(
       <div id="quote-box">
-        <Text />
-        <Author />
-        <Buttons />
+        <Text text={this.props.text} />
+        <Author author={this.props.author} />
+        <Buttons generate={this.props.generate}/>
       </div>
     );
   }
