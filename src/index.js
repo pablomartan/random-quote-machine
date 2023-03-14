@@ -30,7 +30,9 @@ const reducer = (state = defaultState, action) => {
   return action.type == GENERATE ? generateState() : state;
 };
 
-const store = createStore(reducer);
+const asyncMiddleware = applyMiddleware(thunk);
+
+const store = createStore(reducer, asyncMiddleware);
 
 const mapStateToProps = state => {
   return {
