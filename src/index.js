@@ -27,7 +27,7 @@ const generateState = () => {
 };
 
 const reducer = (state = defaultState, action) => {
-  return action.type == GENERATE ? generateState() : state;
+  return action.type == GENERATE ? action.state : state;
 };
 
 const asyncMiddleware = applyMiddleware(thunk);
