@@ -19,10 +19,11 @@ const generateQuote = () => {
   }
 };
 
-const generateState = () => {
-  return {
-    'quote': `This is a quote with rand number ${Math.floor(Math.random() * 4)}`,
-    'author': `Author No. ${Math.floor(Math.random() * 100)}`
+const asyncQuote = () => {
+  return async function(dispatch) {
+    await fetch('http://localhost:3001/get_quote')
+    .then(async res => await res.json())
+    .then(parsed => dispatch(generateQuote(parsed)))
   }
 };
 
