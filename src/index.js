@@ -13,9 +13,10 @@ const defaultState = {
 }
 
 // Action Creator
-const generateQuote = () => {
+const generateQuote = quote => {
   return {
-    type: GENERATE
+    type: GENERATE,
+    state: quote
   }
 };
 
