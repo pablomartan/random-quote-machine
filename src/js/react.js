@@ -10,6 +10,14 @@ const quoteText = (text, color) => {
   )
 };
 
+const quoteAuthor = author => {
+  return(
+    <div id="author" className="blockquote-footer me-5 text-end">
+      {author}
+    </div>
+  )
+};
+
 export default class QuoteBox extends React.Component {
   constructor(props) {
     super(props); 
@@ -24,9 +32,7 @@ export default class QuoteBox extends React.Component {
         <div className="card col-10 col-sm-8 col-lg-6" >
           <div id="quote-box" className="container card-body">
             {quoteText(this.props.text, color)}
-            <div id="author" className="blockquote-footer me-5 text-end">
-              {this.props.author}
-            </div>
+            {quoteAuthor(this.props.author)}
             <div className="row container align-items-center mt-4">
               <div className="d-flex justify-content-start col-6 col-sm-6 col-md-3">
                 <a id="tweeter-quote" title="Tweet this quote!" className="btn btn-light">
