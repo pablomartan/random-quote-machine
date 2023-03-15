@@ -24,7 +24,7 @@ const asyncQuote = () => {
   return async function(dispatch) {
     await fetch('http://localhost:3001/get_quote')
     .then(async res => await res.json())
-    .then(parsed => dispatch(generateQuote(Object.assign({}, parsed, color)))))
+    .then(parsed => dispatch(generateQuote(Object.assign({}, parsed, color))))
   }
 };
 
