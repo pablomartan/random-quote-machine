@@ -7,6 +7,8 @@ const defaultState = {
   'author': ''
 }
 
+const colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51'];
+
 // Action Creator
 const generateQuote = state => {
   return {
@@ -16,11 +18,13 @@ const generateQuote = state => {
 };
 
 const asyncQuote = () => {
+  const bg = colors[Math.floor(Math.random() * colors.length)];
+  const color = { 'color': bg};
 
   return async function(dispatch) {
     await fetch('http://localhost:3001/get_quote')
     .then(async res => await res.json())
-    .then(parsed => dispatch(generateQuote(parsed)))
+    .then(parsed => dispatch(generateQuote(Object.assign({}, parsed, color)))))
   }
 };
 
@@ -35,7 +39,8 @@ export const store = createStore(reducer, asyncMiddleware);
 export const mapStateToProps = state => {
   return {
     text: state.quote,
-    author: state.author
+    author: state.author,
+    color: state.color
   }
 };
 
