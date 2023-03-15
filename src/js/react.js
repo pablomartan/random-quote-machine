@@ -58,8 +58,8 @@ export default class QuoteBox extends React.Component {
     return(
       <div id="wrapper" className="d-flex align-items-center justify-content-center"
         style={{ backgroundColor: color, width: 100 + 'vw', height: 100 + 'vh' }}>
-        <div className="card col-10 col-sm-8 col-lg-6" >
-          <div id="quote-box" className="container card-body">
+        <div className="card col-10 col-sm-8 col-lg-6">
+          <div id="quote-box" className="container card-body d-flex flex-column justify-content-between" style={{ minHeight: 300 + 'px' }}>
             {quoteText(this.props.text, color)}
             {quoteAuthor(this.props.author)}
             {buttonContainer(this.props.generate)}
