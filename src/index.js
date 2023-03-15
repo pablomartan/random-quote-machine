@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import QuoteBox from './js/react.js';
 import { Provider, connect } from 'react-redux';
-import { store, mapStateToProps, mapDispatchToProps } from './js/redux.js'
+import { store, mapStateToProps, mapDispatchToProps, asyncQuote } from './js/redux.js'
 
 const Present = connect(mapStateToProps,mapDispatchToProps)(QuoteBox);
 
@@ -13,3 +13,5 @@ root.render(
     <Present />
   </Provider>
 )
+
+window.onload = store.dispatch(asyncQuote());
