@@ -18,6 +18,35 @@ const quoteAuthor = author => {
   )
 };
 
+const buttonContainer = generateFunction => {
+  return(
+    <div className="row container align-items-center mt-4">
+      {twitterButton()}
+      {newQuoteButton(generateFunction)}
+    </div>
+  )
+};
+
+const twitterButton = () => {
+  return(
+    <div className="d-flex justify-content-start col-6 col-sm-6 col-md-3">
+      <a id="tweeter-quote" title="Tweet this quote!" className="btn btn-light">
+        <i className="fa-brands fa-twitter"/>
+      </a>
+    </div>
+  )
+};
+
+const newQuoteButton = generateFunction => {
+  return(
+    <div className="d-flex justify-content-end col-6 col-sm-6 col-md-9">
+      <button id="new-quote" className="btn btn-primary" onClick={generateFunction}>
+        New quote!
+      </button>
+    </div>
+  )
+};
+
 export default class QuoteBox extends React.Component {
   constructor(props) {
     super(props); 
@@ -33,18 +62,7 @@ export default class QuoteBox extends React.Component {
           <div id="quote-box" className="container card-body">
             {quoteText(this.props.text, color)}
             {quoteAuthor(this.props.author)}
-            <div className="row container align-items-center mt-4">
-              <div className="d-flex justify-content-start col-6 col-sm-6 col-md-3">
-                <a id="tweeter-quote" title="Tweet this quote!" className="btn btn-light">
-                  <i className="fa-brands fa-twitter"/>
-                </a>
-              </div>
-              <div className="d-flex justify-content-end col-6 col-sm-6 col-md-9">
-                <button id="new-quote" className="btn btn-primary" onClick={this.props.generate}>
-                  New quote!
-                </button>
-              </div>
-            </div>
+            {buttonContainer(this.props.generate)}
           </div>
         </div>
       </div>
