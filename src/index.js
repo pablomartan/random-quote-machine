@@ -1,55 +1,9 @@
 // index file for webpack
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import QuoteBox from './js/react.js';
 import { Provider, connect } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import QuoteBox from './js/components.js';
-
-const GENERATE = 'GENERATE';
-const defaultState = {
-  'quote': '',
-  'author': ''
-}
-
-// Action Creator
-const generateQuote = quote => {
-  return {
-    type: GENERATE,
-    state: quote
-  }
-};
-
-const asyncQuote = () => {
-  return async function(dispatch) {
-    await fetch('http://localhost:3001/get_quote')
-    .then(async res => await res.json())
-    .then(parsed => dispatch(generateQuote(parsed)))
-  }
-};
-
-const reducer = (state = defaultState, action) => {
-  return action.type == GENERATE ? action.state : state;
-};
-
-const asyncMiddleware = applyMiddleware(thunk);
-
-const store = createStore(reducer, asyncMiddleware);
-
-const mapStateToProps = state => {
-  return {
-    text: state.quote,
-    author: state.author
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    generate: () => {
-      dispatch(asyncQuote());
-    }
-  }
-};
+import { store, mapStateToProps, mapDispatchToProps } from './js/redux.js'
 
 const Present = connect(mapStateToProps,mapDispatchToProps)(QuoteBox);
 
