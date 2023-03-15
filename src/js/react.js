@@ -10,7 +10,7 @@ export default class QuoteBox extends React.Component {
     const color = this.props.color;
     console.log('Inside React ' + this.props.color);
     return(
-      <div style={{ backgroundColor: color, width: 100 + 'vw', height: 100 + 'vh' }}>
+      <div id="wrapper" style={{ backgroundColor: color, width: 100 + 'vw', height: 100 + 'vh' }}>
         <div className="card col-10 col-sm-8 col-lg-6" >
           <div id="quote-box" className="container card-body">
             <div id="text" className="text-center h3 m-3 mb-5">
