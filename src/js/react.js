@@ -1,5 +1,12 @@
 import React from 'react';
 
+const quoteText = text => {
+  return(
+    <div id="text" className="text-center h3 m-3 mb-5">
+      {text}
+    </div>
+  )
+};
 export default class QuoteBox extends React.Component {
   constructor(props) {
     super(props); 
@@ -14,9 +21,7 @@ export default class QuoteBox extends React.Component {
         style={{ backgroundColor: color, width: 100 + 'vw', height: 100 + 'vh' }}>
         <div className="card col-10 col-sm-8 col-lg-6" >
           <div id="quote-box" className="container card-body">
-            <div id="text" className="text-center h3 m-3 mb-5">
-              {this.props.text}
-            </div>
+            {quoteText(this.props.text)}
             <div id="author" className="blockquote-footer me-5 text-end">
               {this.props.author}
             </div>
