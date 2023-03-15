@@ -7,15 +7,15 @@ const quoteText = text => {
     </div>
   )
 };
+
 export default class QuoteBox extends React.Component {
   constructor(props) {
     super(props); 
   }
   
   render() {
-    console.log(this.props);
     const color = this.props.color;
-    console.log('Inside React ' + this.props.color);
+
     return(
       <div id="wrapper" className="d-flex align-items-center justify-content-center"
         style={{ backgroundColor: color, width: 100 + 'vw', height: 100 + 'vh' }}>
