@@ -17,7 +17,7 @@ const generateQuote = state => {
   }
 };
 
-const asyncQuote = () => {
+export const asyncQuote = () => {
   const bg = colors[Math.floor(Math.random() * colors.length)];
   const color = { 'color': bg};
 
