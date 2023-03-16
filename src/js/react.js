@@ -32,7 +32,7 @@ const twitterButton = (text,author) => {
     <div className="d-flex justify-content-start col-6 col-sm-6 col-md-3">
       <a id="tweeter-quote" title="Tweet this quote!" className="btn btn-light"
         href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-    encodeURIComponent('"' + text + '" ' + author)}>
+        encodeURIComponent('"' + text + '" ' + author)} target="_blak">
         <i className="fa-brands fa-twitter"/>
       </a>
     </div>
