@@ -66,7 +66,7 @@ export default class QuoteBox extends React.Component {
             {quoteAuthor(this.props.author)}
             {buttonContainer(this.props.generate, this.props.text, this.props.author)}
             <div>
-              Find the code at <a href="https://github.com/pablomartan/random-quote-generator">GitHub</a>
+              Find the code at <a href="https://github.com/pablomartan/random-quote-machine">GitHub</a>
             </div>
           </div>
         </div>
