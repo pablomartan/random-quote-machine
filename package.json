@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server",
-    "server": "node --experimental-modules src/server.js"
+    "start": "webpack-dev-server --config webpack.dev.cjs",
+    "build": "webpack --config webpack.prod.cjs"
   },
   "repository": {
     "type": "git",
